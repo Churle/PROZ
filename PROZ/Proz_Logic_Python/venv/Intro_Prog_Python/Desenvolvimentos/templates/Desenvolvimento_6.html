@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <title>Intro Prog Python</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Desenvolvimento_5.css') }}">
+
+    <title>JS Game</title>
+</head>
+
+<body>
+    <h1>Desafios do Modulo Intro Prog Python</h1>
+    <div>
+        <h3> <br>Desenvolvimento 6 (Trilha 3) : <br>
+            <br>#Faça um programa que receba o nome do usuario .<br>
+            #Faça um programa que receba a data de nascimento (entre 1922 e 2021).<br>
+            #A partir dessas variaveis o sistema ira mostrar o nome do usuario e a data que completou em 2022.<br>
+            #Caso o usuario nao digite um numero ou seja uma data invalida, informe que a entrada esta errada e continue o loop.<br>
+            . </h3>
+            <div class="resolucao">
+                <br> <h2>Resolucao:</h2><br>
+                *   <br>print("Bem vindo usuario")<br>
+                    programa = True <br>
+                    
+                    while (programa):<br>
+                      try:<br>
+                    # Captura de nome<br>
+                        nome = input("Digite seu nome: ")<br>
+                    
+                    # Verificação do nome (se contém algum número)<br>
+                        if any(char.isdigit() for char in nome):<br>
+                          raise ValueError("Nome inválido. Não deve conter números.")<br>
+                    
+                          <br>print("Seu nome:", nome)<br>
+                    
+                      #captacao de idade :<br>
+                    
+                        idade=int(input("Digite sua idade "))<br>
+                        print("Sua idade :",idade)<br>
+                        
+                      #verificacao da idade<br>
+                    
+                        if not isinstance (idade,int) or idade <=0:<br>
+                          print("Voce digitou uma idade inexistente tente novamente ")<br>
+                          continue <br>
+                        
+                        
+                      #Verificacao de dada de nascimento:<br>
+                    
+                        data=int(input("Digite seu ano de nascimento (Valido apenas 1922 a 2021) "))<br>
+                        print("Ano de nascimento: ",data)<br>
+                    
+                      #Verificacao da data de nascimento<br>
+                    
+                        if not isinstance(data,int) or data < 1920 or data > 2024:<br>
+                          print("Voce digitou uma entrada invalida ")<br>
+                          continue<br>
+                        
+                        Prox_Ano = 2025<br>
+                        Data_Atual =  (Prox_Ano - data)<br>
+                        print(nome," sua idade em 2022 sera: ", Data_Atual)<br>
+                    
+                      except(ValueError,TypeError):<br>
+                        print("Entrada invalida")<br>
+                    
+                    calc_data ()<br>
+                
+            </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='Desenvolvimento_5.py') }}" defer></script>
+
+
+</body>
+
+</html>

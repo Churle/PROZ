@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <title>Intro Prog Python</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Desenvolvimento_5.css') }}">
+
+    <title>JS Game</title>
+</head>
+
+<body>
+    <h1>Desafios do Modulo Intro Prog Python</h1>
+    <div>
+        <h3> <br>Desenvolvimento 5 (Trilha 3) : <br><br><br>Faça uma função calculadora que os números e as operações serão feitas pelo usuário.<br> 
+             O código deve ficar rodando infinitamente até que o usuário escolha a opção de sair. <br>
+             No início, o programa mostrará a seguinte lista de operações:<br><br>
+
+            1: Soma<br>
+            2: Subtração<br>
+            3: Multiplicação<br>
+            4: Divisão<br>
+            0: Sair<br><br>
+            
+            Digite o número para a operação correspondente e caso o usuário introduza qualquer outro, o sistema deve mostrar a mensagem “Essa opção não existe” e voltar ao menu de opções.<br>
+            
+            Após a seleção, o sistema deve pedir para o usuário inserir o primeiro e segundo valor, um de cada.<br> Depois precisa executar a operação e mostrar o resultado na tela. Quando o usuário escolher a opção “Sair”, o sistema irá parar.<br>
+            
+            <br>É necessário que o sistema mostre as opções sempre que finalizar uma operação e mostrar o resultado. </h3>
+            <div class="resolucao">
+                <h2>Resolucao:</h2>
+                    *   def calculadora(num1, num2, entrada): <br>
+                    while True:  # Loop infinito<br>
+                        if entrada == 1:<br>
+                            resultado = float(num1) + float(num2)<br>
+                            return resultado<br>
+                        elif entrada == 2:<br>
+                            resultado = float(num1) - float(num2)<br>
+                            return resultado<br>
+                        elif entrada == 3:<br>
+                            resultado = float(num1) / float(num2)<br>
+                            return resultado<br>
+                        elif entrada == 4:<br>
+                            resultado = float(num1) * float(num2)<br>
+                            return resultado<br>
+                        elif entrada == 5:<br>
+                            print("Saida Confirmada")<br>
+                            return None<br>
+                        else:<br>
+                            print("Você digitou um número inválido.")<br>
+                        
+                        # Se a execução chegar aqui, pede uma nova entrada<br>
+                        entrada = float(input("Digite 1 para somar, 2 para subtrair, 3 para dividir, 4 para multiplicar, 5 para sair: "))<br><br><br>
+                
+                # Testando a função<br>
+                while True:<br>
+                    a = float(input("Digite o primeiro número: "))<br>
+                    b = float(input("Digite o segundo número: "))<br>
+                    entrada = float(input("Digite 1 para somar, 2 para subtrair, 3 para dividir, 4 para multiplicar, 5 para sair: "))<br><br>
+                
+                    result_calc = calculadora(a, b, entrada)<br>
+                    
+                    if result_calc is not None:<br>
+                        print("O resultado é:", result_calc)<br>
+                
+                    if entrada == 5:<br>
+                        print("Encerrando o programa.")<br>
+                        break  # Sair do loop quando o usuário digitar 5<br>
+                
+            </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='Desenvolvimento_5.py') }}" defer></script>
+
+
+</body>
+
+</html>

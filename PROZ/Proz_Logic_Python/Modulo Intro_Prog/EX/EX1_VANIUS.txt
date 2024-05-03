@@ -1,0 +1,127 @@
+# Criando a lista
+lista = [
+    {"indice": 0, "nome": "Vanius", "idade": 40},
+    {"indice": 1, "nome": "Andre", "idade": 30},
+    {"indice": 2, "nome": "Derek", "idade": 29},
+    {"indice": 3, "nome": "Digao", "idade": 32},
+    {"indice": 4, "nome": "Charlie", "idade": 32},
+    {"indice": 5, "nome": "Isis", "idade": 3}
+]
+
+# Função para mostrar os dados atuais
+def mostrar_dados():
+    for pessoa in lista:
+        print(f"Índice: {pessoa['indice']}, Nome: {pessoa['nome']}, Idade: {pessoa['idade']}")
+
+# Função para alterar os dados
+def alterar_lista():
+    mostrar_dados()
+
+    # Pedindo as Infos para alterar
+    indice = int(input("Digite o índice da pessoa que deseja alterar: "))
+    novo_nome = input("Digite o novo nome: ")
+    nova_idade = int(input("Digite a nova idade: "))
+
+    # Verificar se o índice fornecido é válido
+    if 0 <= indice < len(lista):
+        # Atualizar os dados no dicionário correspondente
+        lista[indice]["nome"] = novo_nome
+        lista[indice]["idade"] = nova_idade
+
+        # Atualizar os índices após a modificação
+        for i, pessoa in enumerate(lista):
+            pessoa["indice"] = i
+
+        print("Dados alterados com sucesso!")
+        mostrar_dados()
+    else:
+        print("Índice inválido. Nenhuma alteração realizada.")
+
+# Função para adicionar dados novos à lista
+def add_lista():
+    mostrar_dados()
+
+    # Pedir infos para add 
+    novo_nome = input("Digite o nome: ")
+    nova_idade = int(input("Digite a idade: "))
+
+    # Criando um novo dicionário para representar a nova pessoa
+    novo_indice = len(lista)
+    nova_pessoa = {
+        "indice": novo_indice,
+        "nome": novo_nome,
+        "idade": nova_idade
+    }
+
+    # Adicionando a pessoa
+    lista.append(nova_pessoa)
+
+    print("Pessoa adicionada com sucesso!")
+    mostrar_dados()
+
+# Função para remover pessoas
+def remover_pessoa_por_nome():
+    mostrar_dados()
+    nome_para_remover = input("Digite o nome da pessoa que deseja remover: ")
+
+    # Verificar se o nome está na lista
+    for pessoa in lista:
+        if pessoa["nome"] == nome_para_remover:
+            # Remover a pessoa da lista
+            lista.remove(pessoa)
+            print(f"A pessoa {nome_para_remover} foi removida com sucesso.")
+            mostrar_dados()
+            return
+
+    # Se o nome não foi encontrado na lista
+    print(f"A pessoa {nome_para_remover} não foi encontrada na lista. Nenhuma alteração realizada.")
+
+# Função para somar as idades maiores de 18 anos
+def somar_idades():
+    soma_idades = 0
+
+    for pessoa in lista:
+        if pessoa["idade"] > 18:
+            soma_idades += pessoa["idade"]
+
+    return soma_idades
+
+# Chamar a função para somar as idades
+resultado_soma = somar_idades()
+
+
+sair_programa = False
+
+while not sair_programa:
+    print("Tabela de operacoes disponiveis\n\n"
+          "Digite 1 para acessar a lista\n",
+          "Digite 2 para substituir uma pessoa na lista\n", 
+          "Digite 3 para adicionar uma pessoa à lista\n",
+          "Digite 4 para remover uma pessoa da lista\n",
+          "Digite 5 para somar as idades maiores de 18 anos",
+          "Digite 6 para sair\n")
+    
+    numero = input("Digite o número da operação: ")
+
+    if numero == "1":
+        mostrar_dados()
+
+    elif numero == "2":
+        alterar_lista()
+
+    elif numero == "3":
+        add_lista()
+
+    elif numero == "4":
+        remover_pessoa_por_nome()
+
+    elif numero == "5":
+        resultado_soma = somar_idades()
+        print(f"A soma das idades das pessoas com mais de 18 anos é: {resultado_soma}")
+
+    elif numero == "6":
+        sair_programa = True
+        print("Programa encerrado.")
+
+    else:
+        print("Número inválido. Tente novamente.")

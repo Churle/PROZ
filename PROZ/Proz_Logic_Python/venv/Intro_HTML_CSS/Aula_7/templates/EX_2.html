@@ -1,0 +1,37 @@
+<html leng="en">
+<head>
+    charset="utf-8"
+    <title>Ex2 aula 7 arrays </title>
+<body>
+    <h2> Exercicio </h2>
+    <h3> Enunciado:
+        #Contagem crescente e recursiva
+    </h3>
+    <h3> Resolucao: <br>
+
+        import time<br><br>
+
+def contagem_regressiva():<br>
+    for i in range(10, 0, -1):<br>
+        print(i)<br>
+        time.sleep(1)<br>
+    print("Olha o aviaozinho!")<br><br>
+
+contagem_regressiva()<br><br>
+
+def contagem_recursiva(numero):<br>
+    if numero == 0:<br>
+        print("Quem quer dinheiro.")<br>
+        return<br>
+    print(numero)<br>
+    contagem_recursiva(numero - 1)<br><br>
+
+contagem_recursiva(10)<br>
+        
+
+
+
+
+
+
+</html>

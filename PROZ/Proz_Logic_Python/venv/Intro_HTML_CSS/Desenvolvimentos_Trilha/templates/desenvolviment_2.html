@@ -1,0 +1,108 @@
+<html leng="en">
+<head>
+    charset="utf-8"
+    <title>Intro Html e CSS </title>
+<body>
+    <h2> Desenvolvimento 2 </h2>
+    <h3># Enunciado:
+        # O dono de uma loja entra em contato com você com a seguinte situação: <br>
+ 
+        # “Boa tarde, <br>
+        Estamos modernizando nossa loja e precisamos de um novo sistema de controle de estoque. <br>
+        Geralmente anotamos todos os produtos que temos disponíveis,<br>
+        e quando um dos produtos acaba, substituímos ele por algum outro produto.<br> 
+        Ouvi dizer que vocês podem fazer um sistema para a gente que mostra a lista com todos nossos produtos,<br> 
+        e nos deixa alterar um produto por outro.<br> 
+        Além disso, estamos pensando em ampliar nosso armazém, para ter mais espaço para mais produtos.<br>
+        Então, se puderem fazer com que o sistema nos permita adicionar mais produtos à lista,<br> 
+        e qualquer outra coisa que acharem necessário, seria muito bom. 
+ 
+        Desde já agradeço!” 
+        
+        
+    </h3>
+    <h3># Resolucao: produtos = ["leite", "pão", "manteiga", "queijo"]
+print("1: Ver produtos em estoque")
+print("2: Alterar produto")
+print("3: Inserir produto")
+print("4: Sair do sistema")
+def mostrar_estoque():
+  for item in produtos:   #item poderia ser qualquer outro charactere
+    print(item)
+def alterar_produto():
+   mostrar_estoque()
+   item1 = input("Qual produto deseja alterar?")
+   item2 = input("Qual produto será inserido?")
+   for i in range(len(produtos)):
+     if produtos[i] == item1:
+        produtos[i] = item2
+   mostrar_estoque()  
+def inserir_produto():
+  novo_produto = input("Digite o nome do produto a ser inserido: ")
+  produtos.append(novo_produto)  
+  mostrar_estoque()
+  
+while True:
+    cod = input("Escolha a opção desejada:")
+    try:
+        cod = int(cod)
+        if cod == 1:
+            mostrar_estoque()
+        elif cod == 2:
+            alterar_produto()
+        elif cod == 3:
+            inserir_produto()  
+        elif cod == 4:
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida")
+    except ValueError:
+        print("Opção inválida. Digite um número inteiro.")
+        produtos = ["leite", "pão", "manteiga", "queijo"]
+        print("1: Ver produtos em estoque")
+        print("2: Alterar produto")
+        print("3: Inserir produto")
+        print("4: Sair do sistema")
+        def mostrar_estoque():
+         for item in produtos:   #item poderia ser qualquer outro charactere
+            print(item)
+            def alterar_produto():
+                 mostrar_estoque()
+                 item1 = input("Qual produto deseja alterar?")
+                 item2 = input("Qual produto será inserido?")
+                 for i in range(len(produtos)):
+                    if produtos[i] == item1:
+                    produtos[i] = item2
+                    mostrar_estoque()  
+            def inserir_produto():
+            novo_produto = input("Digite o nome do produto a ser inserido: ")
+            produtos.append(novo_produto)  
+            mostrar_estoque()
+
+while True:
+    cod = input("Escolha a opção desejada:")
+    try:
+        cod = int(cod)
+        if cod == 1:
+            mostrar_estoque()
+        elif cod == 2:
+            alterar_produto()
+        elif cod == 3:
+            inserir_produto()  
+        elif cod == 4:
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida")
+    except ValueError:
+        print("Opção inválida. Digite um número inteiro.")
+
+</h3>     
+
+
+
+
+
+
+</html>

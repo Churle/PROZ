@@ -1,0 +1,33 @@
+body {
+    letter-spacing: 10px;
+    text-align: center; /* choosing where the <p> ll be on the page */
+
+     /* Bordas e Cores */
+     border: 10px solid rgb(49, 112, 221);
+     background-color:	rgb(0, 0, 0); /* Color of the limited area inside the boarder */
+
+    color: rgba(200, 0, 150, 1);/*color on the writing*/
+     box-shadow: 10px 10px 10px rgb(130,0, 249, 1); /* shadow on the boarder that i can move or get it 			bigger */
+     border-radius:80px; 
+     padding: 15px 30px; /* thickness of padding area */
+     display:flexbox; /* this shows how we want the whole element to be */
+     cursor:pointer; /* this show the pointer format when passing on the element */
+    /* Highlight the first paragraph */
+    font-weight:bolder; 
+     color: #f50ae5; /* Pink */
+    /* Definindo a largura do paragrafo e posicionamento na tela */
+     max-width: 800px; /* Ajust maximum width */
+     margin: 0 auto; /* Center it */ 
+     max-height: 60px;    
+    }
+
+    div{
+        text-align: left;
+        letter-spacing: 1px;
+    }
+
+    .resolucao{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: crimson;
+
+    }
